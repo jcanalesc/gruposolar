@@ -1,0 +1,190 @@
+@import url("auction.css");
+form
+{
+   margin: 0px;
+}
+#descr
+{
+   width: 250px;
+   height: 212px;
+   overflow: auto;
+}
+#sup_der
+{
+   height: 24px;
+   width: 160px;
+   font-size: 21px;
+   padding: 0px;
+   text-align: center;
+}
+#eventos
+{
+   height: 175px;
+   overflow: auto;
+}
+#inf_der
+{
+   height: 247px;
+}
+#chat
+{
+   height:185px;
+   overflow: auto;
+   margin: 5px 0px 5px 0px;
+   border: 1px solid #979797;
+}
+#list
+{
+   width: 200px;
+   height: 260px;
+}
+#list p
+{
+   cursor: pointer; 
+   color: #060077;
+}
+#list p:hover:after
+{
+    content: " <-- Congelar";
+}
+#list p a.ah
+{
+    display: none;
+}
+#list p:hover
+{
+	font-weight: bold;
+}
+#broadcast
+{
+	width: 100%;
+	height: 40px;
+	margin: 0px;
+}
+select
+{
+	margin: 0px;
+}
+#visors
+{
+	margin: 0px;
+	padding: 0px;
+	border: 3px solid #464646;
+	width: 0px;
+	height: 0px;
+	background-color: #FFFFFF;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+#content
+{
+	overflow: auto;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+p.ty
+{
+	cursor: pointer;
+   display: block;
+   width: 140px;
+   height: 20px;
+   border: 1px solid #322CA3;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   background-color: #C4C4C4;
+   text-align: center;
+}
+p.ty:hover
+{
+	color: #FFFFFF;
+   background-color: #000000;
+}
+#floating
+{
+   position: absolute;
+   background-color: #B9B9B9;
+   border: 2px groove #000A64;
+}
+#floating .close
+{
+   position: relative;
+   margin-left: auto;
+   margin-right: 0px;
+}
+#closev
+{
+	font-weight: bolder;
+	cursor: pointer;
+}
+#closev:hover:after
+{
+	content: " <--- Cerrar ventana";
+}
+#closev:hover:before
+{
+	content: "Cerrar ventana ---> ";
+}
+.edit
+{
+   width: 24px;
+   height: 24px;
+   cursor: pointer;
+   background-image: url('lapiz.png'); 
+}
+
+.btn
+{
+   width: 24px;
+   height: 24px;
+   cursor: pointer;
+}
+.goup
+{
+   background-image: url('uparrow.png');
+}
+.godown
+{
+   background-image: url('dnarrow.png');
+}
+.del
+{
+   background-image: url('delete.png');
+}
+.clickea
+{
+   cursor: pointer;
+}
+#interactivo
+{
+   height: 260px;
+   width: 450px;
+   text-align: center;
+}
+#interactivo p
+{
+	margin: 4px 0px 3px 0px;
+}
+#visor
+{
+   height: 260px;
+   width: 240px;
+   overflow: auto;
+   border: 1px solid #000000;
+   margin-right: 5px;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   background-color: #FFFFFF;
+   
+}
+#visor p
+{
+   margin: 0px 0px 2px 0px;
+}
+#verdatos
+{
+	float: left;
+	width: 75px;
+}

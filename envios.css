@@ -1,0 +1,72 @@
+body
+{
+    background: #ADADAD;
+    font-family: Arial, sans-serif;
+}
+div#query
+{
+    display: inline-block;
+    border: 1px outset #757575;
+    background: #969696;
+    padding: 10px 50px;
+}
+table.desp
+{
+    background: #FFFFFF;
+    width: 100%;
+    text-align: center;
+}
+table.desp td
+{
+    border: 1px outset #868686;
+    text-align: center;
+}
+p#adminpop
+{
+    font-size: 8px;
+}
+div#admin
+{
+    display: none;
+    border: 1px outset #757575;
+    background: #C2C2C2;
+    padding: 10px 40px;
+}
+div.newenvio
+{
+	position: relative;
+	margin: 0px auto;
+	display: inline-block;
+}
+p#adminpop
+{
+    color: #FFFFFF;
+    cursor: pointer;
+}
+div.columna
+{
+    float: left;
+}
+span.col
+{
+    float: left;
+}
+span.colr
+{
+    float: right;
+}
+div#foot
+{
+    width: 100%;
+    clear: both;
+}
+#fotosuperior a
+{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+table p
+{
+    text-align: center;
+}

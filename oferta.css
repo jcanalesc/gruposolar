@@ -1,0 +1,189 @@
+div, body, html, img
+{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+body
+{
+	background-color: #9cd9eb;
+}
+
+#container
+{
+	width: 992px; /* 1024 - 2*16 */
+	position: relative;
+	margin: 20px auto 20px auto;
+	border: 5px solid #2e869e;
+	background-color: #fff;
+	padding: 16px;
+}
+#logo, #centro, #derecho
+{
+	display: block;
+	float: left;
+	/* height: 113px; */
+}
+#logo
+{
+	margin: 15px;
+}
+#logo, #logo img, #derecho
+{
+	width: 200px;
+	border: 0px;
+}
+#centro
+{
+	width: 500px;
+	text-align: center;
+}
+#centro_t1
+{
+	font-size: 18px;
+	font-weight: bolder;
+	color: #229CD1;
+}
+#centro_t2
+{
+	color: #AAA;
+}
+#caja
+{
+	border: 2px dashed #000;
+	width: 410px;
+	/* height: 60px; */
+	margin: 10px;
+	padding: 10px;
+	font-size: 16px;
+}
+#caja p
+{
+	margin: 0px;
+}
+#derecho
+{
+	text-align: center;
+	font-size: 16px;
+	font-weight: bolder;
+	color: #229CD1;
+}
+#derecho p
+{
+	margin: 2px;
+}
+#reloj
+{
+	margin-top: 30px;
+}
+#tiempo_restante
+{
+	color: #f33;
+}
+#slogan
+{
+	font-size: 12px;
+}
+#foto_oferta
+{
+	float: left;
+	border: 0px;
+	width: 519px;
+	height: 474px;
+}
+#foto_oferta img
+{
+	width: 519px;
+	height: 474px;
+}
+div.formu
+{
+	width: 400px;
+	text-align: center;
+	float: left;
+	padding: 4px 15px;
+}
+#formu_login p
+{
+	color: #229CD1;
+	font-weight: bold;
+}
+input.short
+{
+	width: 100px;
+}
+#logon_box
+{
+	text-align: left;
+	width: 200px;
+	margin: 0px auto 40px auto;
+	position: relative;
+}
+span.bull
+{
+	position: relative;
+	font-size: 32px;
+	color: #00A705;
+	line-height: 50%;
+	vertical-align: text-top;
+	margin-top: -50%;
+	top: -15%;
+	
+}
+#formu_confirma
+{
+	display: none;
+	text-align: left;
+	font-size: 16px;
+}
+#formu_confirma p
+{
+	color: #229CD1;
+}
+
+#tbl tr td:last-child
+{
+	text-align: left;
+}
+#tbl tr td:first-child
+{
+	text-align: right;
+}
+#tbl td
+{
+	padding-bottom: 10px;
+}
+#link_reg, #link_forgot
+{
+	color: inherit;
+	text-decoration: none;
+	font-size: inherit;
+}
+#link_reg:hover, #link_forgot:hover
+{
+	text-decoration: underline;
+}
+.logout_link
+{
+	margin-top: 20px;
+}
+#aviso_finalizado
+{
+	display: none;
+	font-weight: bold;
+	color: #f00;
+	padding: 0px 25px;
+	float: left;
+}
+#aviso_finalizado p.cn
+{
+	text-align: center;
+}
+#logo a
+{
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
