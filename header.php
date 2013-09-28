@@ -224,18 +224,11 @@ por las publicaciones realizadas en este portal de noticias.";
    public static $modificables = array
    (
       'slogan', 'titulo_frontis', 'descripcion_pag', 'palabras_clave',
-      'tiempo_prelote',
-      'tiempo_postlote',
-      'tiempo_limite',
-      'tiempo_adicional',
-      'tiempo_adj_ganador',
       'from_email',
       'asunto_email_registro',
       'asunto_email_recclave',
       'cuerpo_email_registrob',
       'cuerpo_email_recclaveb',
-      'factor_usuarios',
-      'remate_destacado',
       'empresas',
       'bases',
       'marquesina',
@@ -478,17 +471,8 @@ function assoc_array_sort($array, $on, $order=SORT_ASC)
 
 function revisar_sala()
 {
-    if (!isset($_SERVER['REQUEST_URI'])) return;
-    $sala = (isset($_GET['sala']) ? $_GET['sala'] : 1);
-    $r = mysql_query("select * from salas where id_sala = " . mysql_real_escape_string($sala), dbConn::$cn);
-    $is = mysql_num_rows($r) != 1 ? true : false;
-    consts::$SALA = mysql_fetch_assoc($r);
-    mysql_free_result($r);
-    if ($is)
-    {
-        echo file_get_contents("notfound.php");
-        die();
-    }
+  $sala = 1;
+  consts::$SALA = array("id_sala" => 1);
 }
 function hh($clave)
 {

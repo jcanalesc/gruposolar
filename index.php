@@ -1,1 +1,1 @@
-<? include("principal.php"); ?>
+<? include("frontis.php"); ?>

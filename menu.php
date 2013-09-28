@@ -12,22 +12,22 @@ $menu = array
 $menu_admin = array
    (
       "Editar productos" => "administra.php?tipo=".consts::$data[8][1],
-      "Editar remates" => "administra.php?tipo=".consts::$data[8][2],
-      "Facturaciones" => "facturacion.php",
-      "Adjudicar manualmente" => "manual_adj.php",
-      "Categorías" => "categorias.php"
+      // "Editar remates" => "administra.php?tipo=".consts::$data[8][2],
+      // "Facturaciones" => "facturacion.php",
+      // "Adjudicar manualmente" => "manual_adj.php",
+      // "Categorías" => "categorias.php"
    );
 $menu_super_admin = array
     (
         "Configuración" => "config.php?rand=".rand(1000,9000),
         "Editar clientes" => "administra.php?tipo=".consts::$data[8][0],
-        "Editar salas" => "salas.php",
-        "Categorías de la portada" => "categorias_portada.php",
-        "Publicidad" => "publicidad.php",
+        // "Editar salas" => "salas.php",
+        // "Categorías de la portada" => "categorias_portada.php",
+        // "Publicidad" => "publicidad.php",
         "Miniremates" => "miniremates_edit.php",
         "Miniremates automáticos" => "miniremates_automaticos.php",
         "Menú superior" => "mod_menues.php",
-        "Cursos" => "cursos.php",
+        // "Cursos" => "cursos.php",
         "Ofertas" => "oferta_edit.php"
     );
    
@@ -46,7 +46,7 @@ $menu_super_admin = array
          foreach ($menu_super_admin as $name => $var)
             if (file_exists(strtok($var,"?")))
                echo "<li onclick=\"goto('".htmlspecialchars($var)."');\">".htmlspecialchars($name)."</li>\n";
-         echo "<li onclick=\"location.href='/mailbomber/main.php';\">Emails Masivos</li>";
+         // echo "<li onclick=\"location.href='/mailbomber/main.php';\">Emails Masivos</li>";
     }
       echo "<li style=\"float:right;\" onclick=\"window.open('".consts::$pdfbases."');\"> Bases</li>";
     
@@ -74,30 +74,3 @@ $menu_super_admin = array
     }
 ?>
 </div>
-<?
-if (ini())
-{
-      $res = mysql_query("select remates.*, lotes.orden from remates, lotes where remates.id_sala = ".mysql_real_escape_string($_GET['sala'])." and remates.tipo != 'Presencial' and remates.id_remate = lotes.id_remate group by remates.id_remate order by remates.fecha", dbConn::$cn);
-      $catalogos = "";
-      $flag = true;
-      if (mysql_num_rows($res) > 0) while ($row = mysql_fetch_assoc($res))
-      {
-         if ($flag && $row['en_curso'] == "1")
-         {
-            //echo "<div class=\"big\" onclick=\"location.href= 'remate.php?id={$row['id_remate']}';\">IR AL REMATE</div>\n";
-            if (esAdmin())
-            {
-               echo "<div class=\"big\" onclick=\"location.href = 'remate_admin.php?id={$row['id_remate']}';\">IR COMO MARTILLERO: remate {$row['id_remate']}, lote {$row['orden']}</div>\n";
-            }
-            $flag = false;
-         }
-         /*
-         $fch = implode("/", array_reverse(explode("-", $row['fecha'])))." ".$row['hora'];
-         if ($row['publico'] == "1")   
-            $catalogos .= "<div class=\"big\" onclick=\"goto('vitrina.php?id_remate={$row['id_remate']}');\">CAT&Aacute;LOGO <br /> {$row['descripcion']} <br /> $fch </div>";
-            */
-      }
-      echo $catalogos;
-}
-?>
-

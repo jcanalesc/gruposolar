@@ -1,0 +1,45 @@
+body, div
+{
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #000;
+}
+
+#content
+{
+	width: 100%;
+	min-width: 540px;
+	background-color: #eee;
+	position: relative;
+	margin: 0px auto;
+}
+
+#header
+{
+	background-color: #ddd;
+}
+#leftcol
+{
+	width: 210px;
+	background-color: skyblue;
+}
+
+div.floating
+{
+	float: left;
+}
+.clearfixer
+{
+	width: inherit;
+	clear: both;	
+}
+
+#logobox
+{
+	height: 100px;
+}
+
+#loginbox
+{
+	height: 100px;
+}
