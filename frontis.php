@@ -14,6 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="frontis.css" />
 		<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" />
 
+
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="jquery.scrollTo-1.4.2-min.js"></script>
 		<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
@@ -29,11 +30,40 @@
 		<div id="content">
 			<div id="header">
 				<div class="floating" id="logobox">
-					
+					<div class="fixed-bottom">
+						CALL CENTER: 2 - 4450404
+					</div>
 				</div>
 				<div class="floating" id="loginbox">
-					asd</div>
-				<div class="floating" id="userbox"></div>
+					<span>INGRESE AL SITIO N°1 EN LÍNEA DE ENERGÍAS RENOVABLES EN CHILE</span>
+					<form>
+						<table>
+							<tr>
+								<td>Dirección Email:</td>
+								<td><input type="text"></td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>Contraseña:</td>
+								<td><input type="password"></td>
+								<td><input type="submit" value="Iniciar Sesión"></td>
+							</tr>
+							<tr>
+								<td><a class="blue_link" href="#">Regístrese Gratis</a></td>
+								<td><a class="blue_link" href="#">Recuperar Contraseña</a></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<div class="floating" id="userbox">
+					<div>
+						<a href="#"><i class="icon-carro"></i>Mis Compras</a>
+						|
+						<a href="#"><i class="icon-dinero"></i>Canjear mis Puntos</a>
+						|
+						<a href="#"><i class="icon-lapiz"></i>Editar mis Datos</a>
+					</div>
+				</div>
 				<div class="floating" id="instaladores"></div>
 				<div class="clearfixer"></div>
 			</div>

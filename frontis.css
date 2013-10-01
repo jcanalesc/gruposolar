@@ -2,13 +2,16 @@ body, div
 {
 	margin: 0px;
 	padding: 0px;
-	border: 1px solid #000;
+	border: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
 }
 
 #content
 {
 	width: 100%;
 	min-width: 540px;
+	max-width: 1280px;
 	background-color: #eee;
 	position: relative;
 	margin: 0px auto;
@@ -37,9 +40,20 @@ div.floating
 #logobox
 {
 	height: 100px;
+	width: 254px;
+	background-image: url(assets/logo.png);
+	position: relative;
 }
 
 #loginbox
 {
 	height: 100px;
+}
+
+div.fixed-bottom
+{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	font-size: 13px;
 }
