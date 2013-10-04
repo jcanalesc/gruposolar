@@ -11,20 +11,11 @@
 		<meta name="Description" content="<?= consts::$descripcion_pag ?>">
 		<meta name="Keywords" content="<?= consts::$palabras_clave ?>">
 
-		<link rel="stylesheet" type="text/css" href="frontis.css" />
+		<link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+
 		<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" />
-
-
-		<script type="text/javascript" src="jquery.js"></script>
-		<script type="text/javascript" src="jquery.scrollTo-1.4.2-min.js"></script>
-		<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-		<script type="text/javascript" src="reloj.js"></script>
-		<script type="text/javascript"> var conectado = <?= ini() ? "true" : "false" ?>;</script>
-		<script type="text/javascript"> var autorizado_rsm = <?= $_SESSION['autorizado_rsm'] == "1" ? "true" : "false" ?>;</script>
-		<script type="text/javascript" src="swfobject.js"></script>
-
-		<script type="text/javascript" src="frontis.js"></script>
-
+		<link rel="stylesheet" type="text/css" href="nivo-slider/nivo-slider.css" />
+		<link rel="stylesheet" type="text/css" href="frontis.css" />
 	</head>
 	<body>
 		<div id="content">
@@ -36,16 +27,16 @@
 				</div>
 				<div class="floating" id="loginbox">
 					<span>INGRESE AL SITIO N°1 EN LÍNEA DE ENERGÍAS RENOVABLES EN CHILE</span>
-					<form>
+					<form action="login.php" method="post">
 						<table>
 							<tr>
 								<td>Dirección Email:</td>
-								<td><input type="text"></td>
+								<td><input type="text" name="user"></td>
 								<td>&nbsp;</td>
 							</tr>
 							<tr>
 								<td>Contraseña:</td>
-								<td><input type="password"></td>
+								<td><input type="password" name="passwd"></td>
 								<td><input type="submit" value="Iniciar Sesión"></td>
 							</tr>
 							<tr>
@@ -68,32 +59,128 @@
 				<div class="clearfixer"></div>
 			</div>
 			<div id="center">
-				<div class="floating" id="leftcol">
+				<div class="floating padded" id="leftcol">
 					<div class="subtitle">Categorías</div>
 					<ul>
-						<li>Térmica
+						<li><span class="topic red">Térmica</span>
 							<ul>
 								<li>Termos Solares Atmosféricos</li>
 								<li>Termos Solares Presurizados</li>
+								<li>Colectores Solares</li>
+								<li>Energía Solar para Piscinas</li>
+								<li>Repuestos y Accesorios</li>
+							</ul>
+						</li>
+						<li><span class="topic blue">Fotovoltaica</span>
+							<ul>
+								<li>Paneles Fotovoltaicos</li>
+								<li>Inversores</li>
+								<li>Reguladores de Carga</li>
+								<li>Baterías Ciclo Profundo</li>
+								<li>Cables y Conectores</li>
+							</ul>
+						</li>
+						<li><span class="topic green">Eólica</span>
+							<ul>
+								<li>Generadores Eólicos</li>
+								<li>Reguladores de Carga</li>
+							</ul>
+						</li>
+						<li><span class="topic orange">LED</span>
+							<ul>
+								<li>Ampolletas Led</li>
+								<li>Focos Led</li>
+								<li>Luminarias Solares</li>
+								<li>Accesorios</li>
+							</ul>
+						</li>
+						<li><span class="topic skyblue">Otros</span>
+							<ul>
+								<li>Bombas para Riego DC y AC</li>
+								<li>Motores DC</li>
+								<li>Centrales Hidroeléctricas</li>
+								<li>Generadores a Combustión</li>
+							</ul>
+						</li>
+						<li><span class="topic purple">Novedades</span>
+							<ul>
+								<li>Portones Automáticos Solar</li>
+								<li>Sirenas Solares</li>
+								<li>Refrigeradores Solares</li>
+								<li>Ionizadores de Piscina Solar</li>
 							</ul>
 						</li>
 					</ul>
 				</div>
-				<div class="floating" id="ofertas_destacadas">
+				<div class="floating padded" id="ofertas_destacadas">
+					<div class="subtitle2"><b>OFERTAS</b> DESTACADAS </div>
 					<div id="destacadas_carousel">
-						<a href="#"><img src="img1.png"></a>
-						<a href="#"><img src="img2.png"></a>
-						<a href="#"><img src="img3.png"></a>
-						<a href="#"><img src="img4.png"></a>
+						<a href="#"><img src="assets/carousel1.png"></a>
+						<a href="#"><img src="assets/carousel2.png"></a>
+						<a href="#"><img src="assets/carousel3.png"></a>
+						<a href="#"><img src="assets/carousel4.png"></a>
+					</div>
+					
+				</div>
+				<div class="floating padded" id="oferta_del_dia">
+					<div class="subtitle2"><b>OFERTA</b> DEL DÍA</div>
+					<img src="assets/ofertadeldia.png" />
+					<p class="precio-o">Oferta: $<span>138.000</span> c/u</p>
+					<p class="precio-n">Normal: $<span>290.000</span> c/u</p>
+					<center><button class="btn-buy">Comprar</button></center>
+					<div class="creditcards"></div>
+				</div>
+				<div class="floating padded" id="elearning">
+					<div class="subtitle2"><b>CLASES E-</b>LEARNING</div>
+					<img data-src="holder.js/250x310" />
+					<center><button class="btn-buy">Participar</button></center>
+					<div class="creditcards"></div>
+				</div>
+				<div class="floating padded" id="remates_express">
+					<div class="subtitle2"><b>REMATES</b> EXPRESS</div>
+					<div id="miniremates-wrapper" class="holderjs">
+
 					</div>
 				</div>
-				<div class="floating" id="oferta_del_dia"></div>
-				<div class="floating" id="elearning"></div>
-				<div class="floating" id="remates_express"></div>
-				<div class="floating" id="chat"></div>
+				<div class="floating padded" id="chat">
+					<div class="subtitle2"><b>CHAT EN</b> VIVO</div>
+					<div class="chatbox-title">
+						CHATEA CON NUESTROS INGENIEROS
+					</div>
+					<div class="chatbox">
+
+					</div>
+					<div class="chatbox-controls">
+						<input type="text" />
+						<button>ENVIAR</button>
+						<button>CERRAR</button>
+					</div>
+				</div>
 				<div class="clearfixer"></div>
 			</div>
 			<div id="footer"></div>
 		</div>
+
+
+		<script type="text/javascript" src="jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="jquery.scrollTo-1.4.2-min.js"></script>
+		<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+		<script type="text/javascript" src="nivo-slider/jquery.nivo.slider.pack.js"></script>
+
+
+		<script type="text/javascript" src="reloj.js"></script>
+		<script type="text/javascript"> var conectado = <?= ini() ? "true" : "false" ?>;</script>
+		<script type="text/javascript"> var autorizado_rsm = <?= $_SESSION['autorizado_rsm'] == "1" ? "true" : "false" ?>;</script>
+		<script type="text/javascript" src="swfobject.js"></script>
+
+		<script type="text/javascript" src="frontis.js"></script>
+		<script type="text/javascript" src="holder.js"></script>
+		<script type="text/javascript">
+		$(function()
+		{
+			$("#destacadas_carousel").nivoSlider();
+		});
+		</script>
+
 	</body>
 </html>

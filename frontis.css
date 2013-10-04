@@ -12,24 +12,22 @@ body, div
 	width: 100%;
 	min-width: 540px;
 	max-width: 1280px;
-	background-color: #eee;
 	position: relative;
 	margin: 0px auto;
 }
 
 #header
 {
-	background-color: #ddd;
-}
-#leftcol
-{
-	width: 210px;
-	background-color: skyblue;
+	background-color: #ededed;
 }
 
 div.floating
 {
 	float: left;
+}
+div.padded
+{
+	padding: 10px;
 }
 .clearfixer
 {
@@ -56,4 +54,126 @@ div.fixed-bottom
 	bottom: 0px;
 	right: 0px;
 	font-size: 13px;
+}
+
+div.subtitle
+{
+	text-transform: uppercase;
+	font-size: 20px;
+	font-family: 'News Cycle', sans-serif;
+	font-weight: 700;
+	border-bottom: 2px solid #222;
+}
+div.subtitle2
+{
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	color: #444;
+	border-bottom: 2px solid #111;
+	margin-bottom: 5px;
+}
+div.subtitle2 b
+{
+	color: #ff9527;
+}
+
+#destacadas_carousel
+{
+	width: 440px;
+	height: 390px;
+}
+div.creditcards
+{
+	height: 30px;
+	width: 100%;
+	background: url(assets/creditcards.png) no-repeat;
+	padding-bottom: 3px;
+	border-bottom: 2px solid #111;
+}
+
+#leftcol ul
+{
+	list-style-type: none;
+	list-style-position: inside;
+	padding: 0px;
+	margin: 0px;
+}
+#leftcol > ul { margin: 10px 0px; }
+#leftcol > ul > li { text-transform: uppercase;}
+#leftcol > ul > li > ul { margin: 5px 0px; }
+#leftcol > ul > li > ul > li
+{
+	text-transform: none; 
+	display: block; 
+	background-image: url(assets/flecha.png);
+	background-repeat: no-repeat;
+	background-position: right center; 
+	padding-right: 15px; 
+	padding-bottom: 5px;
+	cursor: pointer;
+}
+#leftcol > ul > li > ul > li:hover { background-color: #f3f3f3; }
+
+span.topic { font-weight: 400; font-size: 14px;}
+span.topic.red { color: red;}
+span.topic.blue { color: blue;}
+span.topic.green { color: green;}
+span.topic.orange { color: orange;}
+span.topic.skyblue { color: skyblue;}
+span.topic.purple { color: purple;}
+
+p.precio-o { font-size: 18px; color: #f49515; text-align: center; font-weight: 700;}
+p.precio-n { text-align: center; text-decoration: line-through; }
+
+button.btn-buy
+{
+	color: #fff;
+	border: 0px;
+	background-color: #d74937;
+	cursor: pointer;
+
+	padding: 8px 16px;
+
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-webkit-morder-radius: 6px;
+	margin: 10px 0px;
+}
+
+button.btn-buy:active
+{
+	background-color: #c03220;
+}
+
+#miniremates-wrapper
+{
+	width: 680px;
+	height: 610px;
+	background: url(?holder.js/680x610) no-repeat;
+}
+
+#chat
+{
+	width: 250px;
+}
+
+div.chatbox-title
+{
+	background-color: #eee;
+	padding: 3px;
+	border: 1px solid #aaa;
+}
+div.chatbox
+{
+	background-color: #eee;
+	padding: 3px;
+	border: 1px solid #aaa;
+	border-top: 0px;
+	height: 450px;
+}
+div.chatbox-controls
+{
+	
 }
