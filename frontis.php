@@ -18,6 +18,16 @@
 		<link rel="stylesheet" type="text/css" href="frontis.css" />
 	</head>
 	<body>
+
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
 		<div id="content">
 			<div id="header">
 				<div class="floating" id="logobox">
@@ -111,6 +121,15 @@
 							</ul>
 						</li>
 					</ul>
+					<div class="facebook-box">
+						<div class="fb-like-box" data-href="https://www.facebook.com/energia.solar.9" data-width="190" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+					</div>
+					<div class="socialmedia">
+						<h2>Síguenos</h2>
+						<a href="#"><div class="sm-button fbk"></div></a>
+						<a href="#"><div class="sm-button ytb"></div></a>
+						<a href="#"><div class="sm-button twi"></div></a>
+					</div>
 				</div>
 				<div class="floating padded" id="ofertas_destacadas">
 					<div class="subtitle2"><b>OFERTAS</b> DESTACADAS </div>
@@ -151,7 +170,7 @@
 
 					</div>
 					<div class="chatbox-controls">
-						<input type="text" />
+						<input type="text" placeholder="texto aqui"/>
 						<button>ENVIAR</button>
 						<button>CERRAR</button>
 					</div>
@@ -179,6 +198,7 @@
 		$(function()
 		{
 			$("#destacadas_carousel").nivoSlider();
+
 		});
 		</script>
 
