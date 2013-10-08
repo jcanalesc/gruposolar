@@ -171,8 +171,11 @@
 					</div>
 					<div class="chatbox-controls">
 						<input type="text" placeholder="texto aqui"/>
-						<button>ENVIAR</button>
-						<button>CERRAR</button>
+						<button data-action="send">ENVIAR</button>
+						<button data-action="close">CERRAR</button>
+					</div>
+					<div class="chatbox-template">
+						<span class="chatmsg"><b>%from%:</b>%msg%</span>
 					</div>
 				</div>
 				<div class="clearfixer"></div>
@@ -198,7 +201,7 @@
 		$(function()
 		{
 			$("#destacadas_carousel").nivoSlider();
-
+			Chat.create("#chat", ".chatbox-template", 2);
 		});
 		</script>
 

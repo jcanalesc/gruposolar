@@ -202,6 +202,10 @@ div.chatbox-controls button:active
 {
 	background-color: #d47500;
 }
+#chat div.chatbox-template
+{
+	display: none;
+}
 
 div.socialmedia { clear: both; }
 
