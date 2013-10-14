@@ -18,6 +18,8 @@
 		<link rel="stylesheet" type="text/css" href="frontis.css" />
 	</head>
 	<body>
+		<script type="text/javascript"> var conectado = <?= ini() ? "true" : "false" ?>;</script>
+		<script type="text/javascript"> var autorizado_rsm = <?= $_SESSION['autorizado_rsm'] == "1" ? "true" : "false" ?>;</script>
 
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
@@ -58,7 +60,7 @@
 				</div>
 				<div class="floating" id="userbox">
 					<div>
-						<a href="#"><i class="icon-carro"></i>Mis Compras</a>
+						<a href="principal.php?autoload=ficha_usuario.php"><i class="icon-carro"></i>Mis Compras</a>
 						|
 						<a href="#"><i class="icon-dinero"></i>Canjear mis Puntos</a>
 						|
@@ -157,8 +159,18 @@
 				</div>
 				<div class="floating padded" id="remates_express">
 					<div class="subtitle2"><b>REMATES</b> EXPRESS</div>
+					<div class="mauction-template">
+						<div class="mauction" data-idma="%idmr%">
+							<p class="textochico">GANADOR ACTUAL: %ganador_actual%</p>
+							<img src="%imagen%" width="100" height="100">
+							<p class="nombrep">%nombre_producto%</p>
+							<p class="restante">RESTAN: <span class="tiempor"></span></p>
+							<p class="ficha">VER FICHA</p>
+							<p class="oferta">Oferta actual: $%oferta_actual% + IVA</p>
+							<button>MEJORAR OFERTA A <span>$%oferta_mejorar%</span> + IVA</button>
+						</div>
+					</div>
 					<div id="miniremates-wrapper" class="holderjs">
-
 					</div>
 				</div>
 				<div class="floating padded" id="chat">
@@ -191,8 +203,6 @@
 
 
 		<script type="text/javascript" src="reloj.js"></script>
-		<script type="text/javascript"> var conectado = <?= ini() ? "true" : "false" ?>;</script>
-		<script type="text/javascript"> var autorizado_rsm = <?= $_SESSION['autorizado_rsm'] == "1" ? "true" : "false" ?>;</script>
 		<script type="text/javascript" src="swfobject.js"></script>
 
 		<script type="text/javascript" src="frontis.js"></script>
@@ -202,6 +212,16 @@
 		{
 			$("#destacadas_carousel").nivoSlider();
 			Chat.create("#chat", ".chatbox-template", 2);
+			if (conectado)
+			{
+				$("#loginbox").hide();
+				$("#userbox").show();				
+			}
+			else
+			{
+				$("#loginbox").show();
+				$("#userbox").hide();
+			}
 		});
 		</script>
 

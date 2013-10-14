@@ -6,73 +6,116 @@ var Chat = {
 	interval: null,
 	create: function(ctx, tpl, i)
 	{
-		this.context = $(ctx).get();
-		this.username = "Usuario" + parseInt(Math.random()*10000);
-		this.myTimeStamp = (new Date()).getTime();
-		this.msgTemplate = $(tpl, this.context).html();
-		this.interval = i;
-		this.getMsgHandler = setInterval(this.getLastMessages, this.interval * 1000);
+		Chat.context = $(ctx).get();
+		Chat.username = "Invitado" + parseInt(Math.random()*10000);
+		Chat.myTimeStamp = 0;
+		Chat.msgTemplate = $(tpl, Chat.context).html();
+		Chat.interval = i;
+		Chat.getMsgHandler = setInterval(Chat.getLastMessages, Chat.interval * 1000);
 
-		var ref = this;
 
-		$("button[data-action='send']").on("keydown", function(ev)
+		$(".chatbox-controls input", Chat.context).on("keydown", function(ev)
 		{
 			if (ev.which == 13)
 			{
-				ev.preventDefault();
-				ref.sendMsg();
+				Chat.sendMsg();
 			}
+		});
+
+		$(".chatbox-controls button[data-action='send']").click(function()
+		{
+			Chat.sendMsg();
 		});
 	},
 	showError: function(err)
 	{
-		this.addMessage({
+		Chat.addMessage({
 			from: "Sistema",
 			msg: err
 		});
 	},
 	sendMsg: function()
 	{
-		var msg = $("button[data-action='send']", this.context);
+		var msg = $(".chatbox-controls input", Chat.context).val();
 		$.getJSON("chat/sendmsg.php", {
 				message: msg,
-				user: this.username
+				user: Chat.username,
+				ts: (new Date()).getTime()
 			}, 
 			function(retObj)
 			{
 				if (retObj.error)
-					this.showError(retObj.error);
+					Chat.showError(retObj.error);
 				else
 				{
-					$("button[data-action='send']", this.context).val("");
+					$(".chatbox-controls input", Chat.context).val("");
+					Chat.getLastMessages();
 				}
 			}
 		);	
 	},
+	addMessage: function(msg)
+	{
+		var completemsg = Chat.msgTemplate.replace("%from%", msg.from).replace("%msg%", msg.msg);
+		$(".chatbox", Chat.context).append(completemsg);
+	},
 	getLastMessages: function()
 	{
-		var ref = this;
 		$.getJSON("chat/getmsg.php", {
-				ts: this.myTimeStamp
+				ts: Chat.myTimeStamp
 			},
 			function(retObj)
 			{
 				if (retObj.error)
-					ref.showError(retObj.error);
+					Chat.showError(retObj.error);
 				else
 				{
-					ref.myTimeStamp = (new Date()).getTime();
+					var newts = Chat.myTimeStamp;
 					for (var i = 0; i < retObj.messages.length; i++)
 					{
-						ref.addMessage(retObj.messages[i]);
+						Chat.addMessage(retObj.messages[i]);
+						if (retObj.messages[i].ts > newts)
+							newts = retObj.messages[i].ts;
 					}
+					Chat.myTimeStamp = newts;
 				}
 			}
 		);
-	},
-	addMessage: function(msg)
+	}	
+};
+/*
+<div class="mauction" data-idma="%idmr%">
+	<p class="textochico">GANADOR ACTUAL: %ganador_actual%</p>
+	<img src="%imagen%" width="100" height="100">
+	<p class="nombrep">%nombre_producto%</p>
+	<p class="restante">RESTAN: <span class="tiempor"></span></p>
+	<p class="ficha">VER FICHA</p>
+	<p class="oferta">Oferta actual: $%oferta_actual% + IVA</p>
+	<button>MEJORAR OFERTA A <span>$%oferta_mejorar%</span> + IVA</button>
+</div>
+*/
+
+
+var Mremates = {
+	template: "",
+	updateMRHandler: null,
+	interval: 0,
+	context: null,
+	updateMRBox: function(boxdata)
 	{
-		var completemsg = this.msgTemplate.replace("%from%", msg.from).replace("%msg%", msg.msg);
-		$(".chatbox", this.context).append(completemsg);
+		var target = $(".mauction[data-idma='"+boxdata.id+"']", Mremates.context);
+		if (target.length == 0)
+		{
+			// create element
+			var htmldata = $(Mremates.template
+							.replace("%idmr%", boxdata.id)
+							.replace("%ganador_actual%", boxdata.ganador)
+							.replace("%imagen%", boxdata.foto)
+							.replace("%nombre_producto%", boxdata.nombre)
+							.replace("%oferta_actual%", boxdata.oferta_actual)
+							.replace("%oferta_mejorar%", boxdata.oferta_mejorar));
+			$(Mremates.context).append(htmldata);
+
+		}
 	}
 };

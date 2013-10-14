@@ -1,10 +1,6 @@
 <?
 include("header.php");
 
-if (!isset($_GET['rut']) || strspn($_GET['rut'], "0123456789") != strlen($_GET['rut']) )
-   die(consts::$mensajes[8]);
-if (!esAdmin() && $_SESSION['rut'] != $_GET['rut']) 
-   die(consts::$mensajes[9]);
 ?>
 <script language="javascript">
 
@@ -20,7 +16,7 @@ function changepass(formu)
    var datos = [$(formu).find("#claveo").val(),
                 $(formu).find("#clave1").val(),
                 $(formu).find("#clave2").val(),
-                "<?= $_GET['rut'] ?>"];
+                "<?= $_SESSION['rut'] ?>"];
    if (datos[1] != datos[2])
    {
       alert("Contrase&ntilde;as no coinciden.");
@@ -51,7 +47,7 @@ $campos = array("nombres", "apellidop", "apellidom", "email", "telefono", "direc
 foreach($campos as &$val)
    $val = "users.".$val;
 
-$query = "select users.rut," . implode("," , $campos) . ", comunas.nombre as comuna from users, comunas where comunas.codigo = users.comuna and users.rut = " . mysql_real_escape_string($_GET['rut']); 
+$query = "select users.rut," . implode("," , $campos) . ", comunas.nombre as comuna from users, comunas where comunas.codigo = users.comuna and users.rut = " . mysql_real_escape_string($_SESSION['rut']); 
 
 $res = mysql_query($query, dbConn::$cn) or dbConn::dbError($query);
 
