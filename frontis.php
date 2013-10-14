@@ -161,13 +161,13 @@
 					<div class="subtitle2"><b>REMATES</b> EXPRESS</div>
 					<div class="mauction-template">
 						<div class="mauction" data-idma="%idmr%">
-							<p class="textochico">GANADOR ACTUAL: %ganador_actual%</p>
+							<p class="textochico">GANADOR ACTUAL: <span class="ganador_actual"></span></p>
 							<img src="%imagen%" width="100" height="100">
 							<p class="nombrep">%nombre_producto%</p>
 							<p class="restante">RESTAN: <span class="tiempor"></span></p>
 							<p class="ficha">VER FICHA</p>
-							<p class="oferta">Oferta actual: $%oferta_actual% + IVA</p>
-							<button>MEJORAR OFERTA A <span>$%oferta_mejorar%</span> + IVA</button>
+							<p class="oferta">Oferta actual: $<span class="oferta_actual"></span> + IVA</p>
+							<button>MEJORAR OFERTA A $<span class="oferta_mejorar"></span> + IVA</button>
 						</div>
 					</div>
 					<div id="miniremates-wrapper" class="holderjs">
