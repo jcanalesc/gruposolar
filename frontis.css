@@ -149,9 +149,9 @@ button.btn-buy:active
 
 #miniremates-wrapper
 {
-	width: 660px;
+	width: 750px;
 	height: 610px;
-	background: url(?holder.js/680x610) no-repeat;
+	background: url(?holder.js/750x610) no-repeat;
 }
 
 #chat
@@ -202,7 +202,7 @@ div.chatbox-controls button:active
 {
 	background-color: #d47500;
 }
-#chat div.chatbox-template
+#chat div.chatbox-template, #remates_express div.mauction-template
 {
 	display: none;
 }
@@ -245,4 +245,76 @@ div.sm-button.ytb
 span.chatmsg
 {
 	display: block;
+}
+
+div.mauction 
+{
+	 display: inline-block;
+    width: 147px;
+    height: 290px;
+    overflow: hidden;
+    font-size: 11px;
+	 margin: 2px 0px;
+	 background: #fff;
+	 text-align: center;
+}
+div.mauction p
+{
+	margin: 3px 0px;
+}
+div.mauction p.nombrep
+{
+    height: 32px;
+}
+div.mauction p.restante
+{
+    font-weight: bolder;
+}
+.mauction button
+{
+    display: block;
+    background: #0099ff;
+    color: #FFFFFF;
+    font-weight: bolder;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 2px;
+    padding: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 144px;
+    min-height: 32px;
+}
+.mauction button.button-ganando
+{
+    background: #ff6600;
+}
+.mauction button:active
+{
+    border: 2px outset;
+    background: #888888;
+}
+.mauction p.restante
+{
+    font-size: 14px;
+}
+.mauction img
+{
+    cursor: pointer;
+}
+
+.mauction p.ficha
+{
+    color: #0099ff;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.mauction p.ficha:hover
+{
+    text-decoration: underline;
+}
+.mauction p.oferta
+{
+    font-size: 16px;
+    font-weight: bolder;
 }

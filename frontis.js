@@ -132,7 +132,7 @@ var Mremates = {
 	},
 	getMRData: function()
 	{
-
+		
 	},
 	updateMRBox: function(boxdata)
 	{
