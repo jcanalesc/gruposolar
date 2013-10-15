@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.1.47, for unknown-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.32, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: remates2
+-- Host: localhost    Database: gruposolar
 -- ------------------------------------------------------
--- Server version	5.1.47
+-- Server version	5.5.32-0ubuntu0.13.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -35,7 +35,7 @@ CREATE TABLE `acciones` (
   KEY `fk_a_rut` (`rut`),
   CONSTRAINT `fk_a_lote` FOREIGN KEY (`id_lote`) REFERENCES `lotes` (`id_lote`),
   CONSTRAINT `fk_a_rut` FOREIGN KEY (`rut`) REFERENCES `users` (`rut`)
-) ENGINE=InnoDB AUTO_INCREMENT=65736 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,8 +47,8 @@ DROP TABLE IF EXISTS `adjs`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 /*!50001 CREATE TABLE `adjs` (
-  `precio` int(11),
-  `id_lote` int(11)
+  `precio` tinyint NOT NULL,
+  `id_lote` tinyint NOT NULL
 ) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
 
@@ -102,7 +102,7 @@ CREATE TABLE `categorias` (
   PRIMARY KEY (`id_cat`),
   KEY `rut_owner` (`rut_owner`),
   CONSTRAINT `categorias_ibfk_1` FOREIGN KEY (`rut_owner`) REFERENCES `users` (`rut`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,13 +130,11 @@ DROP TABLE IF EXISTS `chat`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `chat` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `sender` varchar(30) DEFAULT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ts` bigint(20) DEFAULT NULL,
+  `sender` varchar(100) DEFAULT NULL,
   `msg` text,
-  `receive` varchar(30) DEFAULT NULL,
-  `id_remate` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36311 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -261,7 +259,7 @@ CREATE TABLE `lotes` (
   KEY `fk_producto` (`id_producto`),
   CONSTRAINT `fk_producto` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`),
   CONSTRAINT `fk_remate` FOREIGN KEY (`id_remate`) REFERENCES `remates` (`id_remate`)
-) ENGINE=InnoDB AUTO_INCREMENT=103033 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -307,7 +305,7 @@ CREATE TABLE `miniremates` (
   `pagado` tinyint(1) DEFAULT '0',
   `info` text,
   PRIMARY KEY (`id_miniremate`)
-) ENGINE=MyISAM AUTO_INCREMENT=122106 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=122107 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -339,7 +337,7 @@ CREATE TABLE `noticias` (
   `cuerpo` text,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_noticia`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -417,9 +415,9 @@ DROP TABLE IF EXISTS `precios_f`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 /*!50001 CREATE TABLE `precios_f` (
-  `id_lote` int(11),
-  `precio_min` int(11),
-  `precio` bigint(20)
+  `id_lote` tinyint NOT NULL,
+  `precio_min` tinyint NOT NULL,
+  `precio` tinyint NOT NULL
 ) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
 
@@ -432,9 +430,9 @@ DROP TABLE IF EXISTS `precios_f2`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 /*!50001 CREATE TABLE `precios_f2` (
-  `id_lote` int(11),
-  `precio_min` int(11),
-  `precio` bigint(11)
+  `id_lote` tinyint NOT NULL,
+  `precio_min` tinyint NOT NULL,
+  `precio` tinyint NOT NULL
 ) ENGINE=MyISAM */;
 SET character_set_client = @saved_cs_client;
 
@@ -463,7 +461,7 @@ CREATE TABLE `productos` (
   PRIMARY KEY (`id_producto`),
   KEY `fk_owner_producto` (`rut_owner`),
   CONSTRAINT `fk_owner_producto` FOREIGN KEY (`rut_owner`) REFERENCES `users` (`rut`)
-) ENGINE=InnoDB AUTO_INCREMENT=505 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -542,7 +540,7 @@ CREATE TABLE `remates` (
   KEY `fk_rut_remate` (`rut_owner`),
   CONSTRAINT `fk_rut_remate` FOREIGN KEY (`rut_owner`) REFERENCES `users` (`rut`),
   CONSTRAINT `fk_salaremate` FOREIGN KEY (`id_sala`) REFERENCES `salas` (`id_sala`)
-) ENGINE=InnoDB AUTO_INCREMENT=494 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -559,7 +557,7 @@ CREATE TABLE `salas` (
   PRIMARY KEY (`id_sala`),
   KEY `fk_owner_sala` (`rut_owner`),
   CONSTRAINT `fk_owner_sala` FOREIGN KEY (`rut_owner`) REFERENCES `users` (`rut`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -711,4 +709,4 @@ CREATE TABLE `ventas` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-09-28  1:37:32
+-- Dump completed on 2013-10-15  0:07:47
