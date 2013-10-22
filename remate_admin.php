@@ -79,7 +79,7 @@
       <p><span id="estado">Usted tiene la mejor oferta</span></p>
       <form id="f_oferta" method="post" onSubmit="ofertar(); return false;">
          <p><input type="text" name="oferta" id="oferta" /></p>
-         <button class="puja" type="SUBMIT" id="ofertador">Ofertar</button>
+         <button class="puja" type="submit" id="ofertador">Ofertar</button>
       </form>
       
 			<button onClick="ceder_lote();">Pasar al siguiente lote</button>

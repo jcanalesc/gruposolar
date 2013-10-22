@@ -7,7 +7,8 @@
 	$res = login($user, $pass);
 	if ($res == consts::$mensajes[3])
 	{
-		header("Location: frontis.php");
 		exit();
 	}
+	header("Location: frontis.php");
+
 ?>

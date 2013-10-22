@@ -78,7 +78,7 @@
             </table>
          <form id="f_oferta" method="post" onSubmit="ofertar(); return false;" style="display: none;">
             <p><input type="hidden" name="oferta" id="oferta" /></p>
-            <button type="SUBMIT" id="ofertador" class="plomo">Ofertar</button>
+            <button type="submit" id="ofertador" class="plomo">Ofertar</button>
          </form>
          <audio src="mensajemartillero.wav" id="sonido_msg"></audio>
          <audio src="adjudicacion.wav" id="sonido_adj"></audio>

@@ -105,7 +105,7 @@
          <p><span id="estado">Usted tiene la mejor oferta</span></p>
          <form id="f_oferta" method="post" onSubmit="ofertar(); return false;">
             <p><input type="hidden" name="oferta" id="oferta" /></p>
-            <button type="SUBMIT" id="ofertador" class="plomo btn_oferta">Ofertar</button>
+            <button type="submit" id="ofertador" class="plomo btn_oferta">Ofertar</button>
          </form>
          <audio src="mensajemartillero.wav" id="sonido_msg"></audio>
          <audio src="adjudicacion.wav" id="sonido_adj"></audio>

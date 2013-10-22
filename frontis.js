@@ -7,12 +7,11 @@ var Chat = {
 	create: function(ctx, tpl, i)
 	{
 		Chat.context = $(ctx).get();
-		Chat.username = "Invitado" + parseInt(Math.random()*10000);
+		Chat.username = "Invitado";
 		Chat.myTimeStamp = 0;
 		Chat.msgTemplate = $(tpl, Chat.context).html();
 		Chat.interval = i;
 		Chat.getMsgHandler = setInterval(Chat.getLastMessages, Chat.interval * 1000);
-
 
 		$(".chatbox-controls input", Chat.context).on("keydown", function(ev)
 		{
@@ -74,8 +73,9 @@ var Chat = {
 					for (var i = 0; i < retObj.messages.length; i++)
 					{
 						Chat.addMessage(retObj.messages[i]);
-						if (retObj.messages[i].ts > newts)
-							newts = retObj.messages[i].ts;
+						console.log("timestamp: " + retObj.messages[i].ts);
+						if (parseInt(retObj.messages[i].ts) > newts)
+							newts = parseInt(retObj.messages[i].ts);
 					}
 					Chat.myTimeStamp = newts;
 				}

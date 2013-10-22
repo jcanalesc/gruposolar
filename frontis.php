@@ -18,6 +18,7 @@
 		<link rel="stylesheet" type="text/css" href="frontis.css" />
 	</head>
 	<body>
+		<script type="text/javascript" src="sessiondata.js.php"></script>
 		<script type="text/javascript"> var conectado = <?= ini() ? "true" : "false" ?>;</script>
 		<script type="text/javascript"> var autorizado_rsm = <?= $_SESSION['autorizado_rsm'] == "1" ? "true" : "false" ?>;</script>
 
@@ -37,19 +38,23 @@
 						CALL CENTER: 2 - 4450404
 					</div>
 				</div>
-				<div class="floating" id="loginbox">
+				<?php
+					$loginbox = ini() ? "style=\"display:none;\"" : "";
+					$userbox = !ini() ? "style=\"display:none;\"" : "";
+				?>
+				<div class="floating" id="loginbox" <?= $loginbox ?>>
 					<span>INGRESE AL SITIO N°1 EN LÍNEA DE ENERGÍAS RENOVABLES EN CHILE</span>
 					<form action="login.php" method="post">
 						<table>
 							<tr>
 								<td>Dirección Email:</td>
-								<td><input type="text" name="user"></td>
+								<td><input type="text" name="user" /></td>
 								<td>&nbsp;</td>
 							</tr>
 							<tr>
 								<td>Contraseña:</td>
-								<td><input type="password" name="passwd"></td>
-								<td><input type="submit" value="Iniciar Sesión"></td>
+								<td><input type="password" name="passwd" /></td>
+								<td><input type="submit" value="Iniciar Sesión" /></td>
 							</tr>
 							<tr>
 								<td><a class="blue_link" href="#">Regístrese Gratis</a></td>
@@ -58,7 +63,7 @@
 						</table>
 					</form>
 				</div>
-				<div class="floating" id="userbox">
+				<div class="floating" id="userbox" <?= $userbox ?>>
 					<div>
 						<a href="principal.php?autoload=ficha_usuario.php"><i class="icon-carro"></i>Mis Compras</a>
 						|
@@ -136,10 +141,10 @@
 				<div class="floating padded" id="ofertas_destacadas">
 					<div class="subtitle2"><b>OFERTAS</b> DESTACADAS </div>
 					<div id="destacadas_carousel">
-						<a href="#"><img src="assets/carousel1.png"></a>
-						<a href="#"><img src="assets/carousel2.png"></a>
-						<a href="#"><img src="assets/carousel3.png"></a>
-						<a href="#"><img src="assets/carousel4.png"></a>
+						<a href="#"><img src="assets/carousel1.png" /></a>
+						<a href="#"><img src="assets/carousel2.png" /></a>
+						<a href="#"><img src="assets/carousel3.png" /></a>
+						<a href="#"><img src="assets/carousel4.png" /></a>
 					</div>
 					
 				</div>
@@ -153,7 +158,7 @@
 				</div>
 				<div class="floating padded" id="elearning">
 					<div class="subtitle2"><b>CLASES E-</b>LEARNING</div>
-					<img data-src="holder.js/250x310" />
+					<img data-src="holder.js/250x344" />
 					<center><button class="btn-buy">Participar</button></center>
 					<div class="creditcards"></div>
 				</div>
