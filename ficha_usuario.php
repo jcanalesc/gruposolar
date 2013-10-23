@@ -1,6 +1,6 @@
 <?
 include("header.php");
-
+ini();
 ?>
 <script language="javascript">
 

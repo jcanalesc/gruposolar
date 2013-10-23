@@ -10,11 +10,11 @@ var valor_iva = <?= consts::$iva ?>;
 </script>
 <script language="javascript" src="facturacion_script.js"></script>
 <?
-   if (isset($_GET['rut']))
+   if (isset($_SESSION['rut']))
    {
-      if (strspn($_GET['rut'], "0123456789") != strlen($_GET['rut']) )
+      if (strspn($_SESSION['rut'], "0123456789") != strlen($_SESSION['rut']) )
          die(consts::$mensajes[8]);
-      if (!esAdmin() && (!isset($_SESSION['rut']) || $_SESSION['rut'] != $_GET['rut'] ))
+      if (!esAdmin() && (!isset($_SESSION['rut']) || $_SESSION['rut'] != $_SESSION['rut'] ))
          die(consts::$mensajes[9]);
       // Solicita info del usuario
       /*
@@ -24,7 +24,7 @@ var valor_iva = <?= consts::$iva ?>;
        **/
       
       $queryremate = (isset($_GET['id_remate']) ? " and lotes.id_remate = {$_GET['id_remate']}" : NULL);
-      $rutg = mysql_real_escape_string($_GET['rut']);
+      $rutg = mysql_real_escape_string($_SESSION['rut']);
       $query = "select lotes.id_remate, lotes.orden, productos.descripcion, acciones.cantidad*productos.subunidades as cantidad, acciones.fecha, acciones.monto, acciones.tipo from acciones join lotes using (id_lote) join productos using (id_producto) where acciones.tipo = 'Adjudicacion' and acciones.rut = $rutg $queryremate UNION ALL select CONCAT('MR',miniremates.id_miniremate) as id_remate, 1 as orden, productos.descripcion, 1 as cantidad, miniremates.fecha_termino as fecha, miniremates.monto_actual as monto, 'Adjudicacion' as tipo from miniremates join productos using (id_producto) where miniremates.rut_ganador = $rutg";
       $res = mysql_query($query, dbConn::$cn) or dbConn::dbError($query);
       $ofertas = array();
@@ -55,22 +55,22 @@ var valor_iva = <?= consts::$iva ?>;
       foreach(array_keys($remates) as $k)
         $contenido_select_remates .= "<option value=\"$k\">Remate ID: $k</option>";
         /*
-      $res = mysql_query("select id_remate, fecha, hora from remates where id_remate in (select lotes.id_remate from lotes, acciones where lotes.id_lote = acciones.id_lote and acciones.rut = {$_GET['rut']} and acciones.tipo = 'Adjudicacion')", dbConn::$cn);
+      $res = mysql_query("select id_remate, fecha, hora from remates where id_remate in (select lotes.id_remate from lotes, acciones where lotes.id_lote = acciones.id_lote and acciones.rut = {$_SESSION['rut']} and acciones.tipo = 'Adjudicacion')", dbConn::$cn);
       while(list($id, $fecha, $hora) = mysql_fetch_row($res))
          $contenido_select_remates .= "<option value=\"$id\">Remate del ".implode("/", array_reverse(explode("-", $fecha)))." a las $hora</option>\n";
       */
-      $queremate = ($queryremate ? "Remate num. {$_GET['id_remate']}" : "Todos los remates");
+      $queremate = ($queryremate ? "Remate num. {$_SESSION['id_remate']}" : "Todos los remates");
       $max_adj_texto = $total_adj > 0 ? "{$max_adj[0]} en el lote {$max_adj[2]} del remate {$max_adj[1]}" : "Ninguno";
       $ncliente = ucwords($_SESSION['nombres'])." ".ucwords($_SESSION['apellidop'])." ".ucwords($_SESSION['apellidom']);
       echo <<<END
       <table class="tabla">
-         <tr><td>Rut:</td><td>{$_GET['rut']}</td></tr>
+         <tr><td>Rut:</td><td>{$_SESSION['rut']}</td></tr>
          <tr><td>Usuario: </td><td >$ncliente</td></tr>
       </table>
       <h4>Adjudicaciones</h4>
       <select name="selecremate" onchange="muestraremates(this);">
       $contenido_select_remates
-      </select><div class="botonpdf" onclick="obtenerpdf_usuario({$_GET['rut']})">Obtener PDF</div>
+      </select><div class="botonpdf" onclick="obtenerpdf_usuario({$_SESSION['rut']})">Obtener PDF</div>
       <table class="tabla" id="adjudicaciones">
       <tr><td>ID Remate</td><td>N&deg; Lote</td><td>Descripci&oacute;n</td><td>Cantidad</td><td>Fecha y hora</td><td>Precio final neto</td></tr>
       <tr id="notengo" class=\"fijo\" ><td colspan=\"6\">Sin adjudicaciones.</td></tr>

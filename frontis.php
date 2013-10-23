@@ -65,14 +65,15 @@
 				</div>
 				<div class="floating" id="userbox" <?= $userbox ?>>
 					<div>
-						<a href="principal.php?autoload=ficha_usuario.php"><i class="icon-carro"></i>Mis Compras</a>
+						<a href="principal.php?autoload=facturacion.php"><i class="icon-carro"></i>Mis Compras</a>
 						|
 						<a href="#"><i class="icon-dinero"></i>Canjear mis Puntos</a>
 						|
-						<a href="#"><i class="icon-lapiz"></i>Editar mis Datos</a>
+						<a href="principal.php?autoload=ficha_usuario.php"><i class="icon-lapiz"></i>Editar mis Datos</a>
 					</div>
 				</div>
-				<div class="floating" id="instaladores"></div>
+				<div class="floating" id="instaladores">
+				</div>
 				<div class="clearfixer"></div>
 			</div>
 			<div id="center">
