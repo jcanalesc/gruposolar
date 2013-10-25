@@ -73,7 +73,7 @@ var Chat = {
 					for (var i = 0; i < retObj.messages.length; i++)
 					{
 						Chat.addMessage(retObj.messages[i]);
-						console.log("timestamp: " + retObj.messages[i].ts);
+						// console.log("timestamp: " + retObj.messages[i].ts);
 						if (parseInt(retObj.messages[i].ts) > newts)
 							newts = parseInt(retObj.messages[i].ts);
 					}
@@ -116,7 +116,6 @@ function mask_rut(str)
 	data[0] = data[1] = data[2] = "X";
 	return data.reverse().join("");
 }
-
 var Mremates = {
 	template: "",
 	updateMRHandler: null,
@@ -132,7 +131,45 @@ var Mremates = {
 	},
 	getMRData: function()
 	{
-		
+		$.getJSON("miniauction_updater.php", function(obj)
+		{
+			/*
+122108: Object
+delta: "134"
+fecha_inicio: "2013-10-24 22:05:48"
+fecha_termino: "2013-10-31 01:00:00"
+foto: "uploads/minir/icon.png"
+id_miniremate: "122108"
+id_producto: "1"
+incremento: "1"
+killme: "0"
+limpio: "1"
+monto: "$10.100"
+monto2: "$10.200"
+monto_actual: "10100"
+monto_inicial: "10000"
+restante: "146:51:57"
+rut_ganador: "7531868"
+rutoculto_puntos: "7.531.XXX"
+texto: "Escriba descripción"
+titulo: "ESCRIBA TíTULO"
+yogano: false
+*/
+			for (mrid in obj)
+			{
+				Mremates.updateMRBox({
+					id: mrid,
+					foto: obj[mrid].foto,
+					nombre: obj[mrid].titulo,
+					alive: !(obj[mrid].killme == "1"),
+					ganador: obj[mrid].rut_ganador,
+					oferta_actual: obj[mrid].monto,
+					oferta_mejorar: obj[mrid].monto2,
+					tiemporestante: obj[mrid].restante,
+					ganando: obj[mrid].yogano
+				});
+			}
+		});
 	},
 	updateMRBox: function(boxdata)
 	{
@@ -145,17 +182,49 @@ var Mremates = {
 											.replace("%nombre_producto%", boxdata.nombre);
 			$(Mremates.context).append(htmldata);
 			target = $(".mauction[data-idma='"+boxdata.id+"']", Mremates.context);
+			$("button", target.get()).click(function()
+			{
+				if ($(this).data("ganando") == true) return;
+				var valoractual = $(this).find("span").html();
+				valoractual = parseInt(valoractual.substr(1).split(".").join(""));
+				var texto = $(this).text().toLowerCase();
+				if (confirm("¿Está seguro que desea " + texto + "?"))
+					if (confirm("Presione 'Aceptar' para confirmar su oferta."))
+						$.getJSON("miniauction_bid.php", {
+								id_miniremate: target.attr("data-idma"),
+								oferta: valoractual
+							},
+							function(obj)
+							{
+								if (obj && obj.error)
+									alert(obj.error);
+								$.fancybox("holi");
+							}
+						);
+			});
 		}
 		// update box time/winner/bid/visibility
 		if (boxdata.alive)
 		{
 			$(".ganador_actual", target.get()).html(mask_rut(boxdata.ganador));
-			$(".oferta_actual", target.get()).html(format_currency(boxdata.oferta_actual));
-			$(".oferta_mejorar", target.get()).html(format_currency(boxdata.oferta_mejorar));
+			$(".oferta_actual", target.get()).html(boxdata.oferta_actual);
+			$(".oferta_mejorar", target.get()).html(boxdata.oferta_mejorar);
+			$(".tiempor", target.get()).html(boxdata.tiemporestante);
+			if (boxdata.ganando)
+			{
+				$("button", target.get()).data("ganando", true)
+					.addClass("button-ganando").html("VA GANANDO");
+			}
+			else
+			{
+				$("button", target.get()).data("ganando", false)
+					.removeClass("button-ganando").html()
+
+			}
 		}
 		else
 		{
-			// delete the box
+			target.remove();
 		}
 
 	}

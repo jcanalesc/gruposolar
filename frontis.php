@@ -18,7 +18,6 @@
 		<link rel="stylesheet" type="text/css" href="frontis.css" />
 	</head>
 	<body>
-		<script type="text/javascript" src="sessiondata.js.php"></script>
 		<script type="text/javascript"> var conectado = <?= ini() ? "true" : "false" ?>;</script>
 		<script type="text/javascript"> var autorizado_rsm = <?= $_SESSION['autorizado_rsm'] == "1" ? "true" : "false" ?>;</script>
 
@@ -172,22 +171,9 @@
 							<p class="nombrep">%nombre_producto%</p>
 							<p class="restante">RESTAN: <span class="tiempor"></span></p>
 							<p class="ficha">VER FICHA</p>
-							<p class="oferta">Oferta actual: $<span class="oferta_actual"></span> + IVA</p>
-							<button>MEJORAR OFERTA A $<span class="oferta_mejorar"></span> + IVA</button>
+							<p class="oferta">Oferta actual: <span class="oferta_actual"></span> + IVA</p>
+							<button>MEJORAR OFERTA A <span class="oferta_mejorar"></span> + IVA</button>
 						</div>
-					</div>
-					<div id="miniremates-wrapper" class="holderjs">
-						<?php for ($i = 0; $i < 10; $i++): ?>
-						<div class="mauction" data-idma="%idmr%">
-							<p class="textochico">GANADOR ACTUAL: <span class="ganador_actual"></span></p>
-							<img src="%imagen%" width="100" height="100">
-							<p class="nombrep">%nombre_producto%</p>
-							<p class="restante">RESTAN: <span class="tiempor"></span></p>
-							<p class="ficha">VER FICHA</p>
-							<p class="oferta">Oferta actual: $<span class="oferta_actual"></span> + IVA</p>
-							<button>MEJORAR OFERTA A $<span class="oferta_mejorar"></span> + IVA</button>
-						</div>
-						<?php endfor; ?>
 					</div>
 				</div>
 				<div class="floating padded" id="chat">
@@ -229,6 +215,7 @@
 		{
 			$("#destacadas_carousel").nivoSlider();
 			Chat.create("#chat", ".chatbox-template", 2);
+			Mremates.create("#remates_express", ".mauction-template", 1);
 			if (conectado)
 			{
 				$("#loginbox").hide();
