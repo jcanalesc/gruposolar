@@ -182,6 +182,13 @@ yogano: false
 											.replace("%nombre_producto%", boxdata.nombre);
 			$(Mremates.context).append(htmldata);
 			target = $(".mauction[data-idma='"+boxdata.id+"']", Mremates.context);
+			$("img, p.ficha", target.get()).click(function()
+			{
+				$.get("ficha_miniremate.php", { id: target.attr("data-idma") }, function(data)
+				{
+					$.fancybox(data);
+				});
+			})
 			$("button", target.get()).click(function()
 			{
 				if ($(this).data("ganando") == true) return;
@@ -198,7 +205,6 @@ yogano: false
 							{
 								if (obj && obj.error)
 									alert(obj.error);
-								$.fancybox("holi");
 							}
 						);
 			});

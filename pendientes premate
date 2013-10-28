@@ -1,0 +1,59 @@
+
+ventana aparte para chat administrador(es)
+invitados cuando tratan de chatear les aparece mensaje de alerta para que se registren (editable en configuracion)
+aparezca si el administrador(es) esta conectado -> al lado de chat en vivo, una luz verde que diga status: online/offline con circulos verde, rojo
+elearning:
+	instalar dokeos
+
+
+categorias al lado:
+	desaparece todo menos el chat, y se activa una lista con carrito de compra de los productos de esa categoria
+	usar categorias de premate
+	crear "grupos" de categorias
+	cargar eso en el frontis
+
+
+slider
+	ofertas express
+	si pincha, se ve una descripcion y la foto mas grande, y boton comprar
+
+opciones: nota de venta(pagar en local) y webpay, que aparezca opcion. En ambos casos se envía nota de venta.
+	en caso webpay poner en la nota de venta "pagado con webpay, n transaccion"
+
+
+los clientes tienen puntos en su cuenta, que se pueden ver en "mis facturaciones"
+el producto tiene un atributo "puntos" que indica la cantidad de puntos que ofrece.
+1 punto = 1 peso
+
+al momento de comprar puedo "abonar" mis puntos para tener un descuento.
+Los puntos no pueden superar el 50% del valor del producto
+
+
+
+ver si puede configurar el DNS del vps de gruposolar
+
+
+los clientes pueden solicitar un instalador, mandando un mensaje con el requerimiento
+	te tira selects, pedir a alejandro las opciones de cada cosa
+
+un sitio aparte tecnicosolar.cl donde los tecnicos se logean para poder ver sus solicitudes.
+	un adm le puede mandar mensajes a los tecnicos. se inscriben por telefono.
+
+usar rut para logear
+
+modificables:
+	logo
+	slogan
+	titulos de bloques (oferta del dia, ofertas destacadas, remates express, etc.)
+	footer (ambas lineas)
+	links de redes sociales
+	chat: mensaje de registro y de bienvenida
+
+agregar 2 lineas antes de los miniremates, tal como en premate, modificables.
+
+se pueda asignar un correo de administrador, al que le llegan todas las notas de venta.
+
+oferta: agregar precio anterior, para que aparezca tachado
+
+agregar caja de suscripcion a correos, antes de caja facebook
+

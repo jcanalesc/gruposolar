@@ -13,7 +13,7 @@
 
 		<link href='http://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
 
-		<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" />
+		<link rel="stylesheet" type="text/css" href="fancybox2/jquery.fancybox.css" />
 		<link rel="stylesheet" type="text/css" href="nivo-slider/nivo-slider.css" />
 		<link rel="stylesheet" type="text/css" href="frontis.css" />
 	</head>
@@ -201,7 +201,7 @@
 
 		<script type="text/javascript" src="jquery-1.9.0.min.js"></script>
 		<script type="text/javascript" src="jquery.scrollTo-1.4.2-min.js"></script>
-		<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+		<script type="text/javascript" src="fancybox2/jquery.fancybox.pack.js"></script>
 		<script type="text/javascript" src="nivo-slider/jquery.nivo.slider.pack.js"></script>
 
 
