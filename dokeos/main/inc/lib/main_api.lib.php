@@ -1237,8 +1237,9 @@ function api_session_unregister($variable) {
 	if (isset($_SESSION[$variable])) {
 		$_SESSION[$variable] = null;
 		// session_unregister() is deprecated as of PHP 5.3
-		session_unregister($variable);
-		//
+		//session_unregister($variable);
+		unset($_SESSION[$variable]);
+		unset($variable);
 	}
 }
 
