@@ -1,0 +1,320 @@
+body, div
+{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+#content
+{
+	width: 100%;
+	min-width: 540px;
+	max-width: 1280px;
+	position: relative;
+	margin: 0px auto;
+}
+
+#header
+{
+	background-color: #ededed;
+}
+
+div.floating
+{
+	float: left;
+}
+div.padded
+{
+	padding: 10px;
+}
+.clearfixer
+{
+	width: inherit;
+	clear: both;	
+}
+
+#logobox
+{
+	height: 100px;
+	width: 254px;
+	background-image: url(assets/logo.png);
+	position: relative;
+}
+
+#loginbox
+{
+	height: 100px;
+}
+
+div.fixed-bottom
+{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	font-size: 13px;
+}
+
+div.subtitle
+{
+	text-transform: uppercase;
+	font-size: 20px;
+	font-family: 'News Cycle', sans-serif;
+	font-weight: 700;
+	border-bottom: 2px solid #222;
+}
+div.subtitle2
+{
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	color: #444;
+	border-bottom: 2px solid #111;
+	margin-bottom: 5px;
+}
+div.subtitle2 b
+{
+	color: #ff9527;
+}
+
+#destacadas_carousel
+{
+	width: 420px;
+	height: 390px;
+}
+div.creditcards
+{
+	height: 30px;
+	width: 100%;
+	background: url(assets/creditcards.png) no-repeat;
+	padding-bottom: 3px;
+	border-bottom: 2px solid #111;
+}
+
+#leftcol ul
+{
+	list-style-type: none;
+	list-style-position: inside;
+	padding: 0px;
+	margin: 0px;
+}
+#leftcol > ul { margin: 10px 0px; }
+#leftcol > ul > li { text-transform: uppercase;}
+#leftcol > ul > li > ul { margin: 5px 0px; }
+#leftcol > ul > li > ul > li
+{
+	text-transform: none; 
+	display: block; 
+	background-image: url(assets/flecha.png);
+	background-repeat: no-repeat;
+	background-position: right center; 
+	padding-right: 15px; 
+	padding-bottom: 5px;
+	cursor: pointer;
+}
+#leftcol > ul > li > ul > li:hover { background-color: #f3f3f3; }
+
+span.topic { font-weight: 400; font-size: 14px;}
+span.topic.red { color: red;}
+span.topic.blue { color: blue;}
+span.topic.green { color: green;}
+span.topic.orange { color: orange;}
+span.topic.skyblue { color: skyblue;}
+span.topic.purple { color: purple;}
+
+p.precio-o { font-size: 18px; color: #f49515; text-align: center; font-weight: 700;}
+p.precio-n { text-align: center; text-decoration: line-through; }
+
+button.btn-buy
+{
+	color: #fff;
+	border: 0px;
+	background-color: #d74937;
+	cursor: pointer;
+
+	padding: 8px 16px;
+
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-webkit-morder-radius: 6px;
+	margin: 10px 0px;
+}
+
+button.btn-buy:active
+{
+	background-color: #c03220;
+}
+
+#remates_express
+{
+	width: 750px;
+	height: 610px;
+	background: url(?holder.js/750x610) no-repeat;
+}
+
+#chat
+{
+	width: 250px;
+}
+
+div.chatbox-title
+{
+	background-color: #eee;
+	padding: 3px;
+	border: 1px solid #aaa;
+}
+div.chatbox
+{
+	background-color: #eee;
+	padding: 3px;
+	border: 1px solid #aaa;
+	border-top: 0px;
+	height: 450px;
+}
+div.chatbox-controls { border: 1px solid #aaa; }
+div.chatbox-controls input
+{
+	width:120px;
+	padding: 5px;
+	border: 0px;
+	margin: 3px;
+	border-right: 1px solid #aaa;
+}
+div.chatbox-controls button
+{
+	font-size: 10px;
+	color: #fff;
+	background-color: #f49515;
+	border: 0px;
+	font-weight: 700;
+	padding: 5px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	margin: 0px;
+	cursor: pointer;
+}
+
+div.chatbox-controls button:active
+{
+	background-color: #d47500;
+}
+#chat div.chatbox-template, #remates_express div.mauction-template
+{
+	display: none;
+}
+
+div.socialmedia { clear: both; }
+
+div.sm-button
+{
+	display: inline-block;
+	width: 52px;
+	height: 25px;
+	margin: 2px;
+	border: 1px solid #eee;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+div.sm-button.twi 
+{
+	background-image: url(assets/new-twitter-logo.png);
+	background-color: #00aced;
+}
+div.sm-button.fbk
+{
+	background-image: url(assets/facebook-logo2.jpg);
+	background-color: #3c5a9a;
+}
+div.sm-button.ytb
+{
+	background-image: url(assets/youtube-logo.jpg);
+	background-color: #f40000;
+
+}
+
+
+span.chatmsg
+{
+	display: block;
+}
+
+div.mauction 
+{
+	 display: inline-block;
+    width: 147px;
+    height: 290px;
+    overflow: hidden;
+    font-size: 11px;
+	 margin: 2px 0px;
+	 background: #fff;
+	 text-align: center;
+}
+div.mauction p
+{
+	margin: 3px 0px;
+}
+div.mauction p.nombrep
+{
+    height: 32px;
+}
+div.mauction p.restante
+{
+    font-weight: bolder;
+}
+.mauction button
+{
+    display: block;
+    background: #0099ff;
+    color: #FFFFFF;
+    font-weight: bolder;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 2px;
+    padding: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+    width: 144px;
+    min-height: 32px;
+}
+.mauction button.button-ganando
+{
+    background: #ff6600;
+}
+.mauction button:active
+{
+    border: 2px outset;
+    background: #888888;
+}
+.mauction p.restante
+{
+    font-size: 14px;
+}
+.mauction img
+{
+    cursor: pointer;
+}
+
+.mauction p.ficha
+{
+    color: #0099ff;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.mauction p.ficha:hover
+{
+    text-decoration: underline;
+}
+.mauction p.oferta
+{
+    font-size: 16px;
+    font-weight: bolder;
+}

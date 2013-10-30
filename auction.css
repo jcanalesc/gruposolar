@@ -1,0 +1,396 @@
+#estado
+{
+   border: 1px solid #000000;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   padding: 3px;
+   
+   font-weight: bolder; 
+}
+body
+{
+   background-color: #D0D0D0;
+}
+div
+{
+   border: 0px;
+   padding: 0px;
+   margin: 0px;
+   font-family: Verdana, sans-serif;
+}
+img
+{
+   float: left;
+}
+img.emo
+{
+   float: none;
+}
+.plomoestado
+{
+   background-color: #D7D7D7;
+}
+.plomo
+{
+   background-color: #C2C2C2;
+}
+.rojo
+{
+   background-color: #FF2020;
+}
+.verde
+{
+   background-color: #C9FFA5;
+}
+#interactivo button.btn_oferta
+{
+   color: #000000;
+   height: 80px;
+   font-size: 26px;
+   font-weight: bolder;
+   -moz-border-radius: 15px;
+   border-radius: 15px;
+   cursor: pointer;
+}
+.red
+{
+   color: #FF0000;
+}
+#interactivo button:active
+{
+   background-color: #128839;
+}
+#pop, #pop_sm
+{
+	width: 280px;
+	height: 185px;
+	font-size: 14px;
+	text-align: center;
+   overflow: hidden;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   padding: 3px;
+   border: 1px solid #000000;
+   margin-right: 5px;
+   background-color: #FFF;
+}
+#pop p, #pop_sm p
+{
+   margin-bottom: 0px;
+   margin-top: 0px;
+}
+.enlinea
+{
+   padding: 5px;
+   border: 0px;
+   float: left;
+}
+.onlylogo
+{
+   background: url('logooriginal2.png') no-repeat center center #FFFFFF;
+}
+.nologo
+{
+   background: #FFFFFF;
+}
+.inside
+{
+   float: none;
+   margin: 5px;
+}
+.thumb
+{
+   width: 55px;
+   height: 55px;
+   float: none;
+   cursor: pointer; 
+}
+#main
+{
+   width: 1100px;
+   height: 570px;
+   position: relative;
+   margin: 0px auto 0px auto;
+}
+
+#lineap
+{
+   border: 1px solid #34B600;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   padding: 3px;
+   background-color: #C9FFA5;
+   height: 37px;
+   margin-right: 5px;
+   vertical-align: center;
+   font-size: 20px;
+   width: 395px;
+}
+#central
+{
+   position: static;
+   width: 720px;
+   height: inherit;
+   border: 1px solid #000000;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   margin-right: 10px;
+   background-color: #8C8C8C;
+}
+#lateral
+{
+   position: static;
+   width: 280px;
+   padding: 5px;
+   height: inherit;
+   font-size: 12px;
+   border: 1px solid transparent;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   background-color: #8C8C8C;
+}
+#eventos p
+{
+   margin: 2px 0px 2px 0px;
+   font-weight: bold;
+}
+#producto
+{
+   height: 310px;
+   width: 700px;
+   border: 1px solid #000000;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   background-color: #FFFFFF;
+}
+#interactivo
+{
+   height: 181px;
+   width: 400px;
+   border: 1px solid #000000;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   text-align: center;
+   background-color: #FFFFFF;
+}
+#logo
+{
+   height: 45px;
+   margin-right: 5px;
+}
+#datoslog
+{
+   float: right;
+   margin-right: 22px;
+   width: 90px;
+   height: 35px;
+   text-align: center;
+   background-color: #FFFFFF;
+   border: 1px solid #000000;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   vertical-align: center;
+}
+#head
+{
+   height: 50px;
+   width: 740px;
+}
+#titulo
+{
+   margin-right: 5px;
+   width: 170px;
+   height: 45px;
+   font-variant: small-caps;
+   font-weight: bold;
+   font-size: 18px;
+   text-align: center;
+   background-color: #FFFFFF;
+   border: 1px solid #000000;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+	padding: 1px;
+}
+#titulo span
+{
+   font-size: 12px;
+   font-weight: normal;
+}
+
+#descr
+{
+   width: 300px;
+   height: 212px;
+   overflow: auto;
+   background-color: #EEEEEE;
+   border: 1px solid #000000;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   font-size: 14px;
+}
+.pocotiempo
+{
+   background-color: #FFD880;
+}
+#sup_der
+{
+   height: 24px;
+   width: 120px;
+   clear: both;
+   font-size: 21px;
+   padding: 0px;
+   text-align: center;
+   border: 1px solid #FF2A00;
+   background-color: #FFFFFF;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   padding-bottom: 3px;
+}
+#eventos
+{
+   height: 205px;
+   width: 258px;
+   overflow: auto;
+   border: 1px solid #000000;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   background-color: #FFFFFF;
+}
+#inf_der
+{
+   height: 260px;
+   width: 258px;   
+}
+#chat
+{
+   background-color: #FFFFFF;
+   height:225px;
+   width: 258px;
+   overflow: auto;
+   margin: 5px 0px 5px 0px;
+   border: 1px solid #000000;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   padding: 0px 3px;
+}
+p.entry
+{
+   margin: 2px 0px 2px 0px;
+   font-size: 15px;
+   vertical-align: center;
+}
+#msg
+{
+   width: 115px;
+}
+#chat_enviar
+{
+   float: right;
+}
+.martmsg
+{
+	color: #0000A1;
+}
+.pmsg
+{
+    color: #FF0000;
+}
+#pactual
+{
+   font-weight: bolder;
+}
+#conectados
+{
+   float: left;
+   margin-top: 5px;
+   margin-left: 125px;
+   margin-right: auto;
+   border: 1px solid #000000;
+   padding: 7px;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   
+}
+.clock-caption
+{
+   height: 10px;
+   color: #000000;
+   background: #FFFFFF;
+   font-weight: bolder;
+   width: 140px;
+   margin: 0px;
+   padding: 5px;
+   border: 0px;
+   position: relative;
+   margin-top: -10px;
+   margin-bottom: 5px;
+   border-radius: 4px;
+   
+}
+.bigtext
+{
+   font-size: 28px;
+}
+.numerico 
+{
+   float: left;
+}
+.numerico *
+{
+   margin-top: 0px;
+   margin-bottom: 1px;
+}
+.tiny
+{
+   font-size: 12px;
+}
+.flecha {
+border: 0px;
+
+}
+.flecha a
+{
+   display: block;
+   text-decoration: none;
+   color: #7f7f7f;
+   font-weight: bold;
+   font-size: 13px;
+   padding: 4px;
+   border: 0px;
+}
+#wrap
+{
+   float: left;
+   margin-left: 77px;
+}
+.flechaimg
+{
+   width: 32px;
+   height: 32px;
+   float: none;
+   vertical-align: middle;
+}
+#middle
+{
+   width: 64px;
+}
+.t_transparente
+{
+   position: relative;
+   margin: 10px auto;
+}
+.t_transparente td
+{
+   padding: 5px 0px;
+   text-align: left;
+   font-size: 12px;
+}
+.t_transparente tr
+{
+   margin: 15px 0px;
+}
+
+.pujasms
+{
+   font-size: 12px;
+}

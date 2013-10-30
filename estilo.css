@@ -1,0 +1,405 @@
+body, div, span, p, ul, li, button, a, h1, h2, h3, h4, h5, h6, form
+{
+   padding: 0px;
+   margin: 0px;
+   border: 0px;
+   font-family: Arial;
+}
+textarea
+{
+   resize: none;
+}
+h4, h5
+{
+   text-align: center;
+}
+body
+{
+   background-color: #D0D0D0;
+   padding-bottom: 200px;
+   margin-bottom: 200px;
+   height: 100%;
+}
+.carga
+{
+	position: relative;
+	margin: 0px auto;
+}
+div.menu
+{
+   display: table;
+   border-radius: 5px;
+   -moz-border-radius: 5px;
+	background: url(fondo-barra.png) repeat;
+background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.14, rgb(36,36,36)),
+    color-stop(0.92, rgb(140,140,140))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(36,36,36) 14%,
+    rgb(140,140,140) 92%
+);
+   width: 100%;
+   padding: 4px;
+   float: none;
+}
+#fr textarea
+{
+   font-family: Monospace;
+   font-size: 16px;
+   height: 400px;
+   width: 100%;
+   border: 2px solid #111111;
+   background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.14, rgb(210,210,210)),
+    color-stop(0.92, rgb(230,230,230))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(210,210,210) 14%,
+    rgb(230,230,230) 92%
+)
+}
+#main
+{
+   position: relative;
+   width: 100%;
+   height: 100%;
+   max-width: 1024px;
+   min-width: 400px;
+   margin: 0px auto 200px auto;
+}
+#lateral
+{
+   width: inherit;
+   text-align: center;
+   float: left;
+}
+#loginbox
+{
+   text-align: center;
+}
+#welcome
+{
+   border: 1px solid #636363;
+   background-color: #EDEDED;
+   font-variant: small-caps;
+   font-size: 18px;
+   width: 270px;
+   position: relative;
+   margin: 5px auto;
+   border-radius: 5px;
+   -moz-border-radius: 5px;
+}
+
+#loginbox .tabla
+{
+   position: relative;
+   margin: 0px auto;
+   
+}
+#principal
+{
+   width: 100%;
+   max-width: 1024px;
+   overflow: auto;
+   float: left;
+   padding-top: 15px;
+   background-color: #FFFFFF;
+   border: 2px outset #717171;
+   border-radius: 5px;
+   -moz-border-radius: 5px;
+   margin-bottom: 200px;
+}
+li
+{
+   cursor: pointer;
+   float: left;
+}
+button, input.submitea, li
+{
+margin: 0px 4px 4px 0px;
+cursor: pointer;
+color: #FFFFFF;
+font-weight: bold;
+border-radius: 7px;
+-moz-border-radius: 7px;
+border: 0px;
+background-image: url(fondo-boton.png);
+background-repeat: repeat-x;
+background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.14, rgb(36,36,36)),
+    color-stop(0.92, rgb(140,140,140))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(36,36,36) 14%,
+    rgb(140,140,140) 92%
+);
+   padding: 4px 2px;
+}
+li
+{
+   padding: 8px 5px;
+   text-align: center;
+   list-style: none;
+   border-radius: 0px;
+   -moz-border-radius: 0px;
+   
+   
+}
+div.big
+{
+   float: left;
+   margin: 10px 5px;
+   display: table;
+   color: #FFFFFF;
+   font-weight: bold;
+   padding: 10px;
+   height: 50px;
+   vertical-align: middle;
+   border: 1px solid #949494;
+   border-radius: 7px;
+   cursor: pointer;
+   -moz-border-radius: 7px;
+   max-width: 350px;
+   background-image: url(fondo-repetible.png);
+	background-repeat:repeat;
+   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.15, rgb(36, 36, 36)), color-stop(0.9, rgb(140,140,140)));
+   background-image: -moz-linear-gradient(center bottom, rgb(36,36,36) 14%, rgb(140,140,140) 90%);
+}
+div.big:hover
+{
+   text-decoration: underline;
+}
+li:hover
+{
+   text-decoration: underline;
+   background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.14, rgb(140,140,140)),
+    color-stop(0.92, rgb(36,36,36))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(140,140,140) 14%,
+    rgb(36,36,36) 92%);
+}
+.head
+{
+   width: 100%;
+   font-size: 36px;
+   text-align: center;
+}
+#floating div.wrapper
+{
+   background-color: #FFFFFF;
+   text-align: center;
+   overflow-y: auto;
+   overflow-x: visible;
+   height: 90%;
+}
+#floating div div.contiene
+{
+   max-height: 440px;
+   overflow-y: auto;
+   overflow-x: visible;
+}
+#floating form
+{
+    overflow-x: visible;
+}
+.tabla td
+{
+   border: 1px groove #9E9E9E;
+   /*
+   border-radius: 6px;
+   -moz-border-radius: 6px;
+   */
+   padding: 2px;
+   text-align: center;
+   font-size: 14px;
+}
+.tabla tr:hover
+{
+   background-color: #C9FFA5;
+}
+#floating
+{
+   position: absolute;
+   top: 10px;
+   left: 30px;
+   background-color: #B9B9B9;
+   border: 2px groove #000A64;
+   overflow-x: visible;
+   overflow-y: hidden;
+}
+
+.wide
+{
+	width: 270px;
+}
+#floating .close
+{
+   position: relative;
+   margin-left: auto;
+   margin-right: 0px;
+}
+.edit
+{
+   width: 24px;
+   height: 24px;
+   cursor: pointer;
+   background-image: url('lapiz.png'); 
+}
+
+div.btn
+{
+   width: 24px;
+   height: 24px;
+   display: block;
+   cursor: pointer;
+}
+.goup
+{
+   background-image: url('uparrow.png');
+}
+.godown
+{
+   background-image: url('dnarrow.png');
+}
+.del
+{
+   background-image: url('delete.png');
+}
+.clickea
+{
+   cursor: pointer;
+}
+
+.hid
+{
+   display: none;
+   border: 1px solid #000000;
+   background-color: #DED2DD;
+}
+p.fitem
+{
+   margin: 2px;
+   padding: 3px;
+   float: none;
+   font-weight: bolder;
+   cursor: pointer;
+   width: 500px;
+   border: 1px solid transparent;
+   background: #D0D0D0;
+   border-radius: 5px;
+   -moz-border-radius: 5px;
+}
+p.fitem:hover
+{
+   text-decoration: underline;
+   background-color: #4D4D4D;
+   color: #F1F1F1;
+}
+div.pdfget
+{
+   width: 24px;
+   height: 24px;
+   border-radius: 7px;
+   -moz-border-radius: 7px;
+   cursor: pointer;
+   background: url("pdficon.png") no-repeat;
+   float: left;
+}
+#boton_logout
+{
+   width: 100px;
+   position: absolute;
+   top: 10px;
+   right: 60px;
+}
+#room-label
+{
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    border: 2px solid #6F6F6F;
+    color: #FFFFFF;
+    background: #1A1A1A;
+    font-weight: bolder;
+    font-size: 16px;
+}
+.zoom
+{
+   cursor:pointer;
+}
+.botonpdf
+{
+	border-radius: 7px;
+   -moz-border-radius: 7px;
+   cursor: pointer;
+   font-weight: bold;
+   
+   background: #BFBFBF url("pdficon.png") no-repeat;
+   padding: 3px 3px 3px 26px;
+   border: 1px solid #4D4D4D;
+   width: 120px;
+   text-align: center;
+   margin: 3px;
+}
+.botonpdf:hover
+{
+	background-color: #4D4D4D;
+	color: #EBEBEB;
+}
+span.pager
+{
+    margin: 2px 5px;
+}
+span.changep
+{
+    font-weight: bolder;
+    text-decoration: underline;
+    cursor: pointer;
+}
+div.flecha
+{
+    position: absolute;
+    width: 38px;
+    height: 14px;
+    padding: 15px;
+    background: #636363;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.15, rgb(36, 36, 36)), color-stop(0.9, rgb(140,140,140)));
+    background-image: -moz-linear-gradient(center bottom, rgb(36,36,36) 14%, rgb(140,140,140) 90%);
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    top: 100px;
+    cursor: pointer;
+}
+div.flecha:hover
+{
+    text-decoration: underline;
+}
+div#flecha-izq.flecha
+{
+    left: 85px;
+}
+div#flecha-der.flecha
+{
+    right: 85px;
+}
+}
